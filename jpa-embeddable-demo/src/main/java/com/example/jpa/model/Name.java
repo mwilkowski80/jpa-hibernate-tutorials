@@ -1,5 +1,8 @@
 package com.example.jpa.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.Instant;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

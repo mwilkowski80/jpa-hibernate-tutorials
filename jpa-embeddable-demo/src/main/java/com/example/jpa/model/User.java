@@ -1,7 +1,11 @@
 package com.example.jpa.model;
 
+import lombok.Data;
+
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Email;
 
+import java.time.Instant;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -10,6 +14,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "users")
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +24,11 @@ public class User {
     private Name name;
 
     @NotNull
-    @Email
     @Column(unique = true)
     private String email;
+
+    @CreationTimestamp
+    private Instant createdAt;
 
     @Embedded
     @AttributeOverrides(value = {

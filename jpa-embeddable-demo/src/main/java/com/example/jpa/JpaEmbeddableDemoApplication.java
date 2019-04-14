@@ -16,7 +16,7 @@ public class JpaEmbeddableDemoApplication implements CommandLineRunner {
 	private UserRepository userRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaEmbeddableDemoApplication.class, args);
+		SpringApplication.run(JpaEmbeddableDemoApplication.class, args).close();
 	}
 
 	@Override
